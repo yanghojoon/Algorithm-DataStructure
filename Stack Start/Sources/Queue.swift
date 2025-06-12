@@ -11,6 +11,27 @@ protocol Queue {
     var peek: Element? { get }
 }
 
+// Index Queue
+struct IndexQueue<T> {
+    var queue = [T]()
+    var index = 0
+    
+    var isEmpty: Bool {
+        return (queue.count - index) == 0 ? true : false
+    }
+    
+    mutating func push(_ t: T) {
+        queue.append(t)
+    }
+    
+    mutating func pop() -> T {
+        defer {
+            index += 1
+        }
+        return queue[index]
+    }
+}
+
 // Queue Array
 struct QueueArray<T>: Queue {
     private var array: [T] = []
