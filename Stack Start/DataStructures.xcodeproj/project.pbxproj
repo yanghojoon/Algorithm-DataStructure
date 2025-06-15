@@ -74,6 +74,7 @@
 		DEDBFC572809445700B5D1E4 /* FindIfPathExistsInGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDBFC562809445700B5D1E4 /* FindIfPathExistsInGraph.swift */; };
 		DEF107022DFAFC6E00C6884D /* BFSandDFS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF107012DFAFC6E00C6884D /* BFSandDFS.swift */; };
 		DEF107192DFB0EEE00C6884D /* 미로탐색.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF107182DFB0EEE00C6884D /* 미로탐색.swift */; };
+		DEF107252DFE4A8700C6884D /* 부분수열의 합.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF107242DFE4A8700C6884D /* 부분수열의 합.swift */; };
 		OBJ_26 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_39 /* DataStructures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "DataStructures::DataStructures::Product" /* DataStructures.framework */; };
 /* End PBXBuildFile section */
@@ -168,6 +169,7 @@
 		DEDBFC562809445700B5D1E4 /* FindIfPathExistsInGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIfPathExistsInGraph.swift; sourceTree = "<group>"; };
 		DEF107012DFAFC6E00C6884D /* BFSandDFS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFSandDFS.swift; sourceTree = "<group>"; };
 		DEF107182DFB0EEE00C6884D /* 미로탐색.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "미로탐색.swift"; sourceTree = "<group>"; };
+		DEF107242DFE4A8700C6884D /* 부분수열의 합.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "부분수열의 합.swift"; sourceTree = "<group>"; };
 		"DataStructures::DataStructures::Product" /* DataStructures.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DataStructures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"DataStructures::DataStructuresTests::Product" /* DataStructuresTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = DataStructuresTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			children = (
 				DEF107012DFAFC6E00C6884D /* BFSandDFS.swift */,
 				DEF107182DFB0EEE00C6884D /* 미로탐색.swift */,
+				DEF107242DFE4A8700C6884D /* 부분수열의 합.swift */,
 			);
 			path = Baekjoon;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 				DE47D470280320AE00082AEB /* GCDLCM.swift in Sources */,
 				DEF107192DFB0EEE00C6884D /* 미로탐색.swift in Sources */,
 				DE47D46A2803209F00082AEB /* HashadNumber.swift in Sources */,
+				DEF107252DFE4A8700C6884D /* 부분수열의 합.swift in Sources */,
 				DE6DF1A3280451FB009CCD4C /* AdjancencyList.swift in Sources */,
 				DE47D4682803209A00082AEB /* hidePhoneNumber.swift in Sources */,
 				DE8AE6DF280F984C0037D636 /* 다트 게임.swift in Sources */,
