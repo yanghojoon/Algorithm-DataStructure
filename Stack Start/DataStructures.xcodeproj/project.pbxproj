@@ -77,6 +77,7 @@
 		DEF107252DFE4A8700C6884D /* 부분수열의 합.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF107242DFE4A8700C6884D /* 부분수열의 합.swift */; };
 		DEF107282DFE5D7300C6884D /* 타겟넘버.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF107272DFE5D7300C6884D /* 타겟넘버.swift */; };
 		DEF1072A2DFE9F7100C6884D /* 네트워크.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF107292DFE9F7100C6884D /* 네트워크.swift */; };
+		DEF107522E02E38A00C6884D /* 단어변환.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF107512E02E38A00C6884D /* 단어변환.swift */; };
 		OBJ_26 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_39 /* DataStructures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "DataStructures::DataStructures::Product" /* DataStructures.framework */; };
 /* End PBXBuildFile section */
@@ -174,6 +175,7 @@
 		DEF107242DFE4A8700C6884D /* 부분수열의 합.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "부분수열의 합.swift"; sourceTree = "<group>"; };
 		DEF107272DFE5D7300C6884D /* 타겟넘버.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "타겟넘버.swift"; sourceTree = "<group>"; };
 		DEF107292DFE9F7100C6884D /* 네트워크.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "네트워크.swift"; sourceTree = "<group>"; };
+		DEF107512E02E38A00C6884D /* 단어변환.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "단어변환.swift"; sourceTree = "<group>"; };
 		"DataStructures::DataStructures::Product" /* DataStructures.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DataStructures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"DataStructures::DataStructuresTests::Product" /* DataStructuresTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = DataStructuresTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 			children = (
 				DEF107272DFE5D7300C6884D /* 타겟넘버.swift */,
 				DEF107292DFE9F7100C6884D /* 네트워크.swift */,
+				DEF107512E02E38A00C6884D /* 단어변환.swift */,
 			);
 			path = Graph;
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 				DEF107282DFE5D7300C6884D /* 타겟넘버.swift in Sources */,
 				DE3DF77E27BF39DA003D8CB3 /* SortingAlgorithms.swift in Sources */,
 				DE6DF1992803BA43009CCD4C /* FindCenterOfStarGraph.swift in Sources */,
+				DEF107522E02E38A00C6884D /* 단어변환.swift in Sources */,
 				DE47D470280320AE00082AEB /* GCDLCM.swift in Sources */,
 				DEF107192DFB0EEE00C6884D /* 미로탐색.swift in Sources */,
 				DE47D46A2803209F00082AEB /* HashadNumber.swift in Sources */,
