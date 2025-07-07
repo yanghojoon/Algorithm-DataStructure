@@ -11,6 +11,79 @@ protocol Queue {
     var peek: Element? { get }
 }
 
+final class QueueElement {
+    let value: Int
+    var prior: QueueElement?
+    var next: QueueElement?
+    
+    init(value: Int) {
+        self.value = value
+        self.prior = nil
+        self.next = nil
+    }
+}
+
+final class QueueWithLinkedList {
+    var first: QueueElement?
+    var last: QueueElement?
+    var count: Int = 0
+    
+    // Node 한 개를 가진 Queue를 생성하는 경우
+    init(node: QueueElement) {
+        self.first = node
+        self.last = node
+        self.count = 1
+    }
+    
+    func enqueue(node: QueueElement) {
+        last?.next = node
+        node.prior = last
+        last = node
+        count += 1
+    }
+    
+    func dequeue() -> QueueElement? {
+        guard count != 0 else { return nil }
+        let result = first
+        first = first?.next
+        first?.prior = nil
+        count -= 1
+        return result
+    }
+    
+    func peek() -> QueueElement? {
+        return first
+    }
+    
+    func isEmpty() -> Bool {
+        return first == nil && last == nil
+    }
+    
+    func insert(at index: Int, node: QueueElement) {
+        var currentNode = first
+        for i in 0...count {
+            if index == i {
+                if currentNode == nil {
+                    last?.next = node
+                    node.prior = last
+                    last = node
+                } else if currentNode?.prior == nil {
+                    first?.prior = node
+                    node.next = first
+                    first = node
+                } else {
+                    node.next = currentNode
+                    currentNode?.prior?.next = node
+                    node.prior = currentNode?.prior
+                }
+                count += 1
+
+                break
+            }
+            currentNode = currentNode?.next
+        }
+    }
+}
 // Index Queue
 struct IndexQueue<T> {
     var queue = [T]()
