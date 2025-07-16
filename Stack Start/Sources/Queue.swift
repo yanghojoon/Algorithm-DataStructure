@@ -11,67 +11,77 @@ protocol Queue {
     var peek: Element? { get }
 }
 
-final class QueueElement {
-    let value: Int
-    var prior: QueueElement?
-    var next: QueueElement?
+protocol QueueDescribing {
+    associatedtype T
+    func enqueue(node: T)
+    func dequeue() -> T?
+    func insert(at index: Int, node: T)
+}
+
+final class Node<T: Equatable>: Equatable {
+    static func == (lhs: Node<T>, rhs: Node<T>) -> Bool {
+        lhs.value == rhs.value && lhs.next == rhs.next && lhs.prior == rhs.prior
+    }
     
-    init(value: Int) {
+    let value: T
+    var prior: Node?
+    var next: Node?
+
+    init(value: T) {
         self.value = value
         self.prior = nil
         self.next = nil
     }
 }
 
-final class QueueWithLinkedList {
-    var first: QueueElement?
-    var last: QueueElement?
-    var count: Int = 0
-    
-    // Node 한 개를 가진 Queue를 생성하는 경우
-    init(node: QueueElement) {
-        self.first = node
-        self.last = node
-        self.count = 1
-    }
-    
-    func enqueue(node: QueueElement) {
-        last?.next = node
-        node.prior = last
-        last = node
+final class LinkedList<T: Equatable> {
+    var head: Node<T>?
+    var tail: Node<T>?
+    var count = 0
+
+    /// 마지막에 노드 추가 - O(1)
+    func offer(node: Node<T>) {
+        if let tailNode = tail {
+            tailNode.next = node
+            node.prior = tailNode
+            tail = node
+        } else {
+            head = node
+            tail = node
+        }
         count += 1
     }
-    
-    func dequeue() -> QueueElement? {
-        guard count != 0 else { return nil }
-        let result = first
-        first = first?.next
-        first?.prior = nil
-        count -= 1
-        return result
+
+    /// 첫 노드를 빼냄 - O(1)
+    func poll() -> Node<T>? {
+        let result = head
+        if let next = head?.next {
+            next.prior = nil
+            head = next
+        } else {
+            removeAll()
+        }
+
+        return head
     }
-    
-    func peek() -> QueueElement? {
-        return first
-    }
-    
-    func isEmpty() -> Bool {
-        return first == nil && last == nil
-    }
-    
-    func insert(at index: Int, node: QueueElement) {
-        var currentNode = first
+
+    /// 중간에 노드 삽입 - O(n)
+    func set(at index: Int, node: Node<T>) {
+        var currentNode = head
         for i in 0...count {
             if index == i {
                 if currentNode == nil {
-                    last?.next = node
-                    node.prior = last
-                    last = node
+                    // 마지막 노드 추가
+                    tail?.next = node
+                    node.prior = tail
+                    tail = node
                 } else if currentNode?.prior == nil {
-                    first?.prior = node
-                    node.next = first
-                    first = node
+                    // 첫 노드 추가
+                    head?.prior = node
+                    node.next = head
+                    head = node
                 } else {
+                    // 중간 노드 추가
                     node.next = currentNode
                     currentNode?.prior?.next = node
                     node.prior = currentNode?.prior
@@ -83,7 +93,53 @@ final class QueueWithLinkedList {
             currentNode = currentNode?.next
         }
     }
+
+    func removeLast() -> Node<T>? {
+        let result = tail
+
+        if let prior = result?.prior {
+            prior.next = nil
+            tail = prior
+        } else {
+            removeAll()
+        }
+
+        return tail
+    }
+
+    func removeAll() {
+        head = nil
+        tail = nil
+    }
+
+    func isEmpty() -> Bool {
+        head == nil && tail == nil
+    }
+
+    func printList() {
+        var currentNode = head
+        while currentNode != nil {
+            print("value: \(currentNode?.value)\n  prior: \(currentNode?.prior) \n  next: \(currentNode?.next)")
+            currentNode = currentNode?.next
+        }
+    }
 }
+
+final class Queue2<T: Equatable>: QueueDescribing {
+    var list = LinkedList<T>()
+    
+    func enqueue(node: Node<T>) {
+        list.offer(node: node)
+    }
+    
+    func dequeue() -> Node<T>? {
+        return list.poll()
+    }
+    func insert(at index: Int, node: Node<T>) {
+        list.set(at: index, node: node)
+    }
+}
+
 // Index Queue
 struct IndexQueue<T> {
     var queue = [T]()
