@@ -13,7 +13,7 @@ protocol Queue {
 
 protocol QueueDescribing {
     associatedtype T
-    func enqueue(node: T)
+    func enqueue(value: T)
     func dequeue() -> T?
     func insert(at index: Int, node: T)
 }
@@ -40,7 +40,8 @@ final class LinkedList<T: Equatable> {
     var count = 0
 
     /// 마지막에 노드 추가 - O(1)
-    func offer(node: Node<T>) {
+    func offer(value: T) {
+        let node = Node(value: value)
         if let tailNode = tail {
             tailNode.next = node
             node.prior = tailNode
@@ -61,12 +62,14 @@ final class LinkedList<T: Equatable> {
         } else {
             removeAll()
         }
-
+        count -= 1
+        
         return head
     }
 
     /// 중간에 노드 삽입 - O(n)
-    func set(at index: Int, node: Node<T>) {
+    func set(at index: Int, value: T) {
+        let node = Node(value: value)
         var currentNode = head
         for i in 0...count {
             if index == i {
@@ -100,8 +103,10 @@ final class LinkedList<T: Equatable> {
         if let prior = result?.prior {
             prior.next = nil
             tail = prior
+            count -= 1
         } else {
             removeAll()
+            count = 0
         }
 
         return tail
@@ -110,6 +115,7 @@ final class LinkedList<T: Equatable> {
     func removeAll() {
         head = nil
         tail = nil
+        count = 0
     }
 
     func isEmpty() -> Bool {
@@ -125,18 +131,18 @@ final class LinkedList<T: Equatable> {
     }
 }
 
-final class Queue2<T: Equatable>: QueueDescribing {
+final class Queue2<T: Equatable> {
     var list = LinkedList<T>()
     
-    func enqueue(node: Node<T>) {
-        list.offer(node: node)
+    func enqueue(value: T) {
+        list.offer(value: value)
     }
     
     func dequeue() -> Node<T>? {
         return list.poll()
     }
-    func insert(at index: Int, node: Node<T>) {
-        list.set(at: index, node: node)
+    func insert(at index: Int, value: T) {
+        list.set(at: index, value: value)
     }
 }
 
