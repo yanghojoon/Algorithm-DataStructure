@@ -54,6 +54,7 @@
 		DE723BF42815215400C588B7 /* 체육복.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE723BF32815215400C588B7 /* 체육복.swift */; };
 		DE7C0DD928087C3400530243 /* 신고 결과 받기.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7C0DD828087C3400530243 /* 신고 결과 받기.swift */; };
 		DE821646280C47D9006E3358 /* 신규 아이디 추천.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE821645280C47D9006E3358 /* 신규 아이디 추천.swift */; };
+		DE85CB4F2E35C28700C9AF81 /* Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE85CB4E2E35C28700C9AF81 /* Sort.swift */; };
 		DE8AE6DF280F984C0037D636 /* 다트 게임.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8AE6DE280F984C0037D636 /* 다트 게임.swift */; };
 		DE8D4AD427BBE7A800E5C6A9 /* ChallengeTestCaseQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D4AD327BBE7A800E5C6A9 /* ChallengeTestCaseQueue.swift */; };
 		DE9353C627F2026F00D3A172 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9353C527F2026F00D3A172 /* Heap.swift */; };
@@ -155,6 +156,7 @@
 		DE723BF32815215400C588B7 /* 체육복.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "체육복.swift"; sourceTree = "<group>"; };
 		DE7C0DD828087C3400530243 /* 신고 결과 받기.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "신고 결과 받기.swift"; sourceTree = "<group>"; };
 		DE821645280C47D9006E3358 /* 신규 아이디 추천.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "신규 아이디 추천.swift"; sourceTree = "<group>"; };
+		DE85CB4E2E35C28700C9AF81 /* Sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sort.swift; sourceTree = "<group>"; };
 		DE8AE6DE280F984C0037D636 /* 다트 게임.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "다트 게임.swift"; sourceTree = "<group>"; };
 		DE8D4AD327BBE7A800E5C6A9 /* ChallengeTestCaseQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeTestCaseQueue.swift; sourceTree = "<group>"; };
 		DE9353C527F2026F00D3A172 /* Heap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
@@ -410,6 +412,7 @@
 				DE47D45E28031DAE00082AEB /* Graph.swift */,
 				DE3405432DF80501007919D8 /* Graph+AdjacencyList.swift */,
 				DE6DF1A2280451FB009CCD4C /* AdjancencyList.swift */,
+				DE85CB4E2E35C28700C9AF81 /* Sort.swift */,
 			);
 			path = Sources;
 			sourceTree = SOURCE_ROOT;
@@ -537,6 +540,7 @@
 				DE3405442DF80501007919D8 /* Graph+AdjacencyList.swift in Sources */,
 				DEF107022DFAFC6E00C6884D /* BFSandDFS.swift in Sources */,
 				DE47D4622803208800082AEB /* drawSquare.swift in Sources */,
+				DE85CB4F2E35C28700C9AF81 /* Sort.swift in Sources */,
 				DED556E0280D7102006918E2 /* 숫자 문자열과 영단어.swift in Sources */,
 				DE47D46E280320A900082AEB /* CollazSpectation.swift in Sources */,
 				DE44547827E7707700D13EF5 /* CountNegativeNumbersInASortedMatrix.swift in Sources */,
