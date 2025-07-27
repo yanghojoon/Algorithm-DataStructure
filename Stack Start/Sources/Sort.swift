@@ -16,12 +16,39 @@ func selectionSort<T: Comparable>(_ array: [T]) -> [T] {
     }
     
     for i in 0..<sortedArray.count - 1 {
-        var index = i
-        for j in i + 1..<sortedArray.count {
-            if sortedArray[j] < sortedArray[index] {
-                sortedArray.swapAt(index, j)
+        for j in i + 1..<sortedArray.count { // 현재 인덱스 다음 값들을 확인
+            if sortedArray[j] < sortedArray[i] {
+                sortedArray.swapAt(i, j)
             }
         }
     }
+    return sortedArray
+}
+
+// MARK: - 삽입정렬(Insertion Sort)
+
+
+// MARK: - 버블정렬(Bubble Sort)
+/// 다음 요소와 비교하면서 다음 요소가 더 작으면 swap
+/// 가장 마지막 요소가 가장 큰 값으로 계속 정렬이 됨
+func bubbleSort<T: Comparable>(_ array: [T]) -> [T] {
+    guard array.count > 1 else { return array }
+    var sortedArray = array
+    
+    for _ in 0..<sortedArray.count {
+        var isSwap = false // 변경한 값이 있는지 확인하는 플래그
+        
+        for j in 0..<sortedArray.count - 1 {
+            if sortedArray[j] > sortedArray[j + 1] {
+                sortedArray.swapAt(j, j + 1)
+                isSwap = true
+            }
+        }
+        
+        if isSwap == false {
+            break
+        }
+    }
+    
     return sortedArray
 }
